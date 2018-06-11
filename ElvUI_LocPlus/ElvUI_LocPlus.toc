@@ -1,4 +1,4 @@
-﻿## Interface: 20400
+﻿## Interface: 11200
 ## Author: Benik
 ## Version: 2.25
 ## Title: |cffA11313E|r|cffC4C4C4lvUI|r |cffA11313L|r|cffC4C4C4ocation|r |cffA11313P|r|cffC4C4C4lus|r
