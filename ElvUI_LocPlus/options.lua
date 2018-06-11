@@ -1,9 +1,12 @@
-local E, L, V, P, G = unpack(ElvUI)
-local LPB = E:GetModule("LocationPlus")
+local E, L, V, P, G = unpack(ElvUI); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+local LPB = E:GetModule("LocationPlus");
 
+--Cache global variables
+--Lua functions
 local format = string.format
+--WoW API / Variables
 local LEVEL_RANGE, TRADE_SKILLS, FILTERS = LEVEL_RANGE, TRADE_SKILLS, FILTERS
-local COLOR, CLASS_COLORS, CUSTOM, COLOR_PICKER = COLOR, CLASS_COLORS, CUSTOM, COLOR_PICKER
+local COLOR, COLOR_PICKER = COLOR, COLOR_PICKER
 
 -- GLOBALS: AceGUIWidgetLSMlists
 
@@ -156,7 +159,7 @@ function LPB:AddOptions()
 						type = "select",
 						desc = L["Show additional info in the Location Panel."],
 							values = {
-								["NONE"] = L["None"],
+								["NONE"] = NONE,
 								["RLEVEL"] = LEVEL_RANGE,
 							},
 						get = function(info) return E.db.locplus[ info[getn(info)] ] end,
@@ -389,8 +392,8 @@ function LPB:AddOptions()
 								name = COLOR,
 								values = {
 									[1] = L["Auto Colorize"],
-									[2] = CLASS_COLORS,
-									[3] = CUSTOM,
+									[2] = L["Class Colors"],
+									[3] = L["Custom"],
 								},
 								get = function(info) return E.db.locplus[ info[getn(info)] ] end,
 								set = function(info, value) E.db.locplus[ info[getn(info)] ] = value end,
@@ -424,8 +427,8 @@ function LPB:AddOptions()
 								name = COLOR,
 								values = {
 									[1] = L["Use Custom Location Color"],
-									[2] = CLASS_COLORS,
-									[3] = CUSTOM,
+									[2] = L["Class Colors"],
+									[3] = L["Custom"],
 								},
 								get = function(info) return E.db.locplus[ info[getn(info)] ] end,
 								set = function(info, value) E.db.locplus[ info[getn(info)] ] = value LPB:CoordsColor() end,
@@ -508,7 +511,7 @@ function LPB:AddOptions()
 								name = L["Font Outline"],
 								type = "select",
 								values = {
-									["NONE"] = L["None"],
+									["NONE"] = NONE,
 									["OUTLINE"] = "OUTLINE",
 									["MONOCHROMEOUTLINE"] = "MONOCROMEOUTLINE",
 									["THICKOUTLINE"] = "THICKOUTLINE",
