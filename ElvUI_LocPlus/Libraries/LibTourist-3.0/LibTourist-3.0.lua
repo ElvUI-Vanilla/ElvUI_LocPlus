@@ -338,9 +338,9 @@ end
 local zonesToIterate = setmetatable({}, {__index = function(self, key)
 	local t = {}
 	self[key] = t
-	for k,v in pairs(continents) do
+	for k, v in pairs(continents) do
 		if v == key and v ~= k and yardXOffsets[k] then
-			t[getn(t)+1] = k
+			t[t.n+1] = k
 		end
 	end
 	return t
@@ -412,7 +412,7 @@ function Tourist:GetBestZoneCoordinate(x, y, zone)
 
 	local best_zone, best_x, best_y, best_value
 
-	for _,z in ipairs(zonesToIterate[zone_continent]) do
+	for _, z in ipairs(zonesToIterate[zone_continent]) do
 		local z_yardXOffset = yardXOffsets[z]
 		local z_yardYOffset = yardYOffsets[z]
 		local z_yardWidth = yardWidths[z]
@@ -455,7 +455,7 @@ local function retNormal(t, position)
 	return (next(t, position))
 end
 
-local function mysort(a,b)
+local function mysort(a, b)
 	if not lows[a] then
 		return false
 	elseif not lows[b] then
