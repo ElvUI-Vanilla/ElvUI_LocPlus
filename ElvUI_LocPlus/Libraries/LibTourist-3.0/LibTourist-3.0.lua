@@ -340,7 +340,7 @@ local zonesToIterate = setmetatable({}, {__index = function(self, key)
 	self[key] = t
 	for k, v in pairs(continents) do
 		if v == key and v ~= k and yardXOffsets[k] then
-			t[t.n+1] = k
+			t[getn(t)+1] = k
 		end
 	end
 	return t
@@ -499,7 +499,7 @@ function Tourist:IterateZoneInstances(zone)
 			t[k] = nil
 		end
 		for k in pairs(inst) do
-			t[t.n+1] = k
+			t[getn(t)+1] = k
 		end
 		table.sort(t, mysort)
 		t.n = 0
