@@ -401,7 +401,6 @@ local function CreateLocPanel()
 	E:Size(loc_panel, E.db.locplus.lpwidth, E.db.locplus.dtheight)
 	E:Point(loc_panel, "TOP", E.UIParent, "TOP", 0, -E.mult -22)
 	loc_panel:SetFrameStrata("LOW")
-	loc_panel:SetFrameLevel(2)
 	loc_panel:EnableMouse(true)
 	loc_panel:SetScript("OnEnter", LocPanel_OnEnter)
 	loc_panel:SetScript("OnLeave", LocPanel_OnLeave)
@@ -687,12 +686,14 @@ end
 local function CreateDTPanels()
 
 	-- Left coords Datatext panel
-	E:Size(left_dtp, E.db.locplus.dtwidth, E.db.locplus.dtheight)
+	E:Width(left_dtp, E.db.locplus.dtwidth)
+	E:Height(left_dtp, E.db.locplus.dtheight)
 	left_dtp:SetFrameStrata("LOW")
 	left_dtp:SetParent(LocationPlusPanel)
 
 	-- Right coords Datatext panel
-	E:Size(right_dtp, E.db.locplus.dtwidth, E.db.locplus.dtheight)
+	E:Width(right_dtp, E.db.locplus.dtwidth)
+	E:Height(right_dtp, E.db.locplus.dtheight)
 	right_dtp:SetFrameStrata("LOW")
 	right_dtp:SetParent(LocationPlusPanel)
 end
