@@ -5,8 +5,9 @@
 ## Notes: a plugin for ElvUI 10+, that adds location, coords, 2 Datatexts and a tooltip full of info.
 ## RequiredDeps: ElvUI
 ## OptionalDeps: LibTourist-3.0
-## DefaultState: Enabled
+## DefaultState: Enabled3
 
 Libraries\Load_Libraries.xml
-locales\load_locales.xml
-init.xml
+Locales\Load_Locales.xml
+ElvUI_LocPlus.lua
+Config\Load_Config.xml

@@ -1,13 +1,15 @@
-local E, L, V, P, G = unpack(ElvUI)
-local LPB = E:NewModule("LocationPlus", "AceTimer-3.0")
-local DT = E:GetModule("DataTexts")
-local LSM = LibStub("LibSharedMedia-3.0")
-local EP = LibStub("LibElvUIPlugin-1.0")
+local E, L, V, P, G = unpack(ElvUI); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+local LPB = E:NewModule("LocationPlus", "AceTimer-3.0");
+local DT = E:GetModule("DataTexts");
+local LSM = LibStub("LibSharedMedia-3.0");
+local EP = LibStub("LibElvUIPlugin-1.0");
+local tourist = LibStub("LibTourist-3.0");
 
-local tourist = LibStub("LibTourist-3.0")
-
-local format, tonumber, pairs, print = string.format, tonumber, pairs, print
-
+--Cache global variables
+--Lua functions
+local tonumber, pairs, print = tonumber, pairs, print
+local format = string.format
+--WoW API / Variables
 local CreateFrame = CreateFrame
 local ChatFrameEditBox = ChatFrameEditBox
 local GetBindLocation = GetBindLocation
@@ -25,8 +27,6 @@ local GameTooltip, WorldMapFrame = _G["GameTooltip"], _G["WorldMapFrame"]
 
 local PLAYER, UNKNOWN, TRADE_SKILLS, LEVEL_RANGE, STATUS, HOME, CONTINENT = PLAYER, UNKNOWN, TRADE_SKILLS, LEVEL_RANGE, STATUS, HOME, CONTINENT
 local FACTION_STANDING_LABEL2, CONTESTED_TERRITORY, HELPFRAME_HOME_ISSUE3_HEADER, RAID = FACTION_STANDING_LABEL2, CONTESTED_TERRITORY, HELPFRAME_HOME_ISSUE3_HEADER, RAID
-
--- GLOBALS: LocationPlusPanel, LeftCoordDtPanel, RightCoordDtPanel, XCoordsPanel, YCoordsPanel, selectioncolor, continent, continentID
 
 local left_dtp = CreateFrame("Frame", "LeftCoordDtPanel", E.UIParent)
 local right_dtp = CreateFrame("Frame", "RightCoordDtPanel", E.UIParent)
@@ -624,10 +624,8 @@ function LPB:UpdateLocation()
 		E:Width(LocationPlusPanel.Text, autowidth)
 	else
 		E:Width(LocationPlusPanel, fixedwidth)
-		if E.db.locplus.trunc then
-			E:Width(LocationPlusPanel.Text, fixedwidth - 18)
-			LocationPlusPanel.Text:SetWordWrap(false)
-		elseif autowidth > fixedwidth then
+
+		if autowidth > fixedwidth then
 			E:Width(LocationPlusPanel, autowidth)
 			E:Width(LocationPlusPanel.Text, autowidth)
 		end
