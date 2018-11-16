@@ -66,12 +66,12 @@ function LPB:AddOptions()
 		E.Options.args.elvuiPlugins = {
 			order = 50,
 			type = "group",
-			name = "|cff175581E|r|cffC4C4C4lvUI_|r|cff175581P|r|cffC4C4C4lugins|r",
+			name = "|cff175581E|r|cffC4C4C4lvUI |r|cff175581P|r|cffC4C4C4lugins|r",
 			args = {
 				header = {
 					order = 0,
 					type = "header",
-					name = "|cff175581E|r|cffC4C4C4lvUI_|r|cff175581P|r|cffC4C4C4lugins|r"
+					name = "|cff175581E|r|cffC4C4C4lvUI |r|cff175581P|r|cffC4C4C4lugins|r"
 				},
 				locplusShortcut = {
 					type = "execute",
