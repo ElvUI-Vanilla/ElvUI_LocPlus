@@ -101,6 +101,7 @@ function LPB:AddOptions()
  	E.Options.args.elvuiPlugins.args.locplus = {
 		type = "group",
 		name = ColorizeSettingName(L["Location Plus"]),
+		childGroups = "tab",
 		args = {
 			name = {
 				order = 1,
